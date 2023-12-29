@@ -1,5 +1,19 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Omoke omoke = new Omoke();
+        int cnt = 0;
+
+        omoke.startGame();
+        omoke.setPlayerName();
+        while(true) {
+            PrintBoard.print(omoke.getMap());
+            omoke.putStone(cnt);
+            if (omoke.hasWinner()) {
+                break;
+            }
+            cnt++;
+        }
     }
 }
